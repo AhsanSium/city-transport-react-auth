@@ -1,0 +1,10 @@
+/* style={{border:'3px solid red', padding:'5%', margin:'5%', borderRadius:'15px', backgroundColor:'red', opacity:'.5' }} */
+.form-cover{
+    border:1px solid rosybrown;
+    padding: 5%;
+    margin: 5%;
+    border-radius: 15px;
+    background-color: rgb(255, 224, 220);
+   
+}
+
