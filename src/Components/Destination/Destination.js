@@ -1,5 +1,5 @@
 import { Button, Container, FormGroup, Input } from '@material-ui/core';
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
@@ -20,25 +20,20 @@ const useStyles = makeStyles((theme) => ({
 
 const Destination = () => {
 
-    const classes = useStyles();
-    
-    var from = '';
-    var to = '';
+    const [form , setForm] = useState({
+        from:'',
+        to:''    
+    });
 
-    const handleChange = (event) => {
-        console.log(from, to);
-        if (event.target.name === 'from') {
-            from = event.target.value;
-        }
-        if (event.target.name === 'to') {
-            to = event.target.value;
-        }
-        console.log(from, to);
-    }
-    let destination = false;
+    const classes = useStyles();
+
+    
+    let destination;
     const showDestination = () => {
         console.log('Destination');
-        if(from !== '' && to !== ''){
+        const from = form.from;
+        const to = form.to;
+        if(from && to){
             destination = true;
             console.log(destination);
         }
@@ -47,6 +42,20 @@ const Destination = () => {
             alert('Submit All Field');
         }
     }
+    
+    const handleChange = (event) => {
+        if (event.target.name === 'from') {
+            const newForm = { ...form };
+            newForm.from = event.target.value;
+            setForm(newForm);    
+        }
+        if (event.target.name === 'to') {
+            const newForm = { ...form };
+            newForm.to = event.target.value;
+            setForm(newForm);
+        }
+    }
+
 
     return (
         <Container maxWidth="lg">
@@ -61,8 +70,8 @@ const Destination = () => {
                         </FormGroup>
                         {
                         <div>
-                            <p>From {from}</p>
-                            <p>{to}</p>
+                            <p>{form.from}</p>
+                            <p>{form.to}</p>
                         </div>
                         }
                     </Paper>

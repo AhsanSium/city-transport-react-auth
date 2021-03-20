@@ -8,6 +8,7 @@ import carImg from '../../images/car.png';
 import busImg from '../../images/bus.png';
 import trainImg from '../../images/train.png';
 import { UserContext } from '../../App';
+import { useHistory } from 'react-router';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -27,12 +28,16 @@ const Home = () => {
 
     const [user, setUser] = useContext(UserContext);
 
+    const history = useHistory();
+
+
     const handleCardClick = (name) => {
         console.log(name);
         const newUserInfo = { ...user };
             newUserInfo.transport = name;
             setUser(newUserInfo);
             console.log(newUserInfo);
+            history.push('/destination');
     }
 
     return (
