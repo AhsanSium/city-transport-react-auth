@@ -3,7 +3,6 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import { TextFieldsOutlined } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -23,8 +22,8 @@ const Destination = () => {
 
     const classes = useStyles();
     
-    var from = 'FROM';
-    var to = 'TOO';
+    var from = '';
+    var to = '';
 
     const handleChange = (event) => {
         console.log(from, to);
@@ -39,7 +38,7 @@ const Destination = () => {
     let destination = false;
     const showDestination = () => {
         console.log('Destination');
-        if(from != '' && to != ''){
+        if(from !== '' && to !== ''){
             destination = true;
             console.log(destination);
         }
@@ -62,7 +61,7 @@ const Destination = () => {
                         </FormGroup>
                         {
                         <div>
-                            <p>{from}</p>
+                            <p>From {from}</p>
                             <p>{to}</p>
                         </div>
                         }

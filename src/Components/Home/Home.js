@@ -40,25 +40,25 @@ const Home = () => {
             <Grid  container spacing={3} >
                 <Grid  onClick={()=>handleCardClick('bike')} item xs={12} sm={3}>
                     <Paper style={{cursor:'pointer'}} className={classes.paper}>
-                        <img style={{width:'100%',height:'auto'}} src={bikeImg} alt="Image"/>
+                        <img style={{width:'100%',height:'auto'}} src={bikeImg} alt="Bike Img"/>
                         Bike
                     </Paper>
                 </Grid>
                 <Grid onClick={()=>handleCardClick('car')} item xs={12} sm={3}>
                     <Paper style={{cursor:'pointer'}} className={classes.paper}>
-                    <img style={{width:'100%'}} src={carImg} alt="Image"/>
+                    <img style={{width:'100%'}} src={carImg} alt="Car Img"/>
                         Car
                     </Paper>
                 </Grid>
                 <Grid onClick={()=>handleCardClick('bus')} item xs={12} sm={3}>
                     <Paper style={{cursor:'pointer'}} className={classes.paper}>
-                        <img style={{width:'100%'}} src={busImg} alt="Image"/>
+                        <img style={{width:'100%'}} src={busImg} alt="Bus Img"/>
                         Bus
                     </Paper>
                 </Grid>
                 <Grid onClick={()=>handleCardClick('train')} item xs={12} sm={3}>
                     <Paper style={{cursor:'pointer'}} className={classes.paper}>
-                        <img style={{width:'100%'}} src={trainImg} alt="Image"/>
+                        <img style={{width:'100%'}} src={trainImg} alt="Train Img"/>
                         Train
                         </Paper>
                 </Grid>
