@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
 const Header = () => {
 
     const classes = useStyles();
-    const [user, setUser] = useContext(UserContext);
+    const [user] = useContext(UserContext);
 
     return (
 

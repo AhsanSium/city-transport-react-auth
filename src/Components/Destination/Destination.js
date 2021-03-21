@@ -37,7 +37,7 @@ const Destination = () => {
         storeData: []
     });
 
-    const [user, setUser] = useContext(UserContext);
+    const [user] = useContext(UserContext);
 
 
     const classes = useStyles();
@@ -138,7 +138,7 @@ const Destination = () => {
                                             form.storeData.map(data => <div style={{ display: 'flex', justifyContent: 'space-around', padding: '2%' }}><img style={{ width: '20%', height: '25%', alignSelf: 'center' }} src={person} alt="img" /><p style={{ fontWeight: 'bolder', alignSelf: 'center' }}>4</p><img style={{ width: '50%', margin: '5%' }} src={form.image} alt="img" /> <p style={{ fontWeight: 'bolder', alignSelf: 'center' }}>{data}</p></div>)
                                         }
                                         {
-                                            !form.transport && 
+                                            !form.storeData && 
                                             <p style={{ fontWeight: 'bolder'}}> Please Select A Transport First ! </p>
                                         }
                                     </div>
