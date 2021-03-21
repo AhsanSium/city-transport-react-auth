@@ -58,7 +58,7 @@ const Destination = () => {
             newForm.image = bus;
             data.map(singleData => newStoreData.push(singleData.bus))
         }
-        if (user.transport === 'bike') {
+        if (user.transport === 'train') {
             newForm.image = train;
             data.map(singleData => newStoreData.push(singleData.train))
         }
