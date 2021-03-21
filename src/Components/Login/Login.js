@@ -4,10 +4,11 @@ import "firebase/auth";
 import firebaseConfig from './firebase.config';
 import { UserContext } from '../../App';
 import { useHistory, useLocation } from 'react-router';
-import { Container, FormGroup } from '@material-ui/core';
+import { Button, Container, FormGroup } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import './Login.css';
+import google from '../../images/google.png';
 
 
 
@@ -166,29 +167,43 @@ const Login = () => {
                     user.isSignedIn &&
                     <div>
                         <p> Welcome, {user.name}! </p>
-                        <img style={{ width: '40%', borderRadius: '50%' }} src={user.photo} alt="user img" />
+                        
                     </div>
                 }
                 <h2>{newUser ? 'Sign Up' : 'Login'} </h2>
-                <FormGroup onSubmit={handleSubmit} className={classes.root} autoComplete="off">
+                <FormGroup  onSubmit={handleSubmit} className={classes.root} autoComplete="off">
                     
                     {newUser &&
                         <TextField onBlur={handleChange} required id="filled-secondary" label="Name" variant="filled" color="secondary" name="name" />
 
                     }
                     <TextField onBlur={handleChange} required id="filled-secondary" label="E-mail" variant="filled" color="secondary" name="email" />
+                    
                     <TextField onBlur={handleChange} required id="filled-secondary" label="Password" variant="filled" color="secondary" name="password" type="password"  />
                     
-                    <input onClick={handleSubmit} value={newUser?'Sign Up': 'Sign in'} type="submit" />
-                    <input  type="checkbox" onChange={() => setNewUser(!newUser)} name="newUser" id="" />
-                    <label htmlFor="newUser">New User Sign Up !</label>
+                    <Button onClick={handleSubmit} variant="contained" color="primary">
+                        {newUser?'Sign Up': 'Sign in'}
+                    </Button>
+                    
+                    {/* <input onClick={handleSubmit} value={newUser?'Sign Up': 'Sign in'} type="submit" /> */}
+                    
+                    <div style={{display:'flex', margin:'5px' }}>
+                        <input   type="checkbox" onChange={() => setNewUser(!newUser)} name="newUser" id="" />
+                        <label  htmlFor="newUser">New User Sign Up !</label>
+                    </div>
+                    
+                </FormGroup>
+                    
+                    
+                    <Button onClick={handleGoogleSignIn} variant="contained" color="secondary">
+                        <img style={{width:'5%',height:'50%'}} src={google} alt="img"/>  Sign in
+                    </Button>
+                    
                     <p style={{ color: "red" }}>{user.error}</p>
                     {
                         user.success &&
                         <p style={{ color: "green" }}>User {newUser ? 'Created' : 'Logged In'} Successfully ! </p>
                     }
-                </FormGroup>
-                <button onClick={handleGoogleSignIn}>Google Sign in</button>
             </div>
         </Container>
     );

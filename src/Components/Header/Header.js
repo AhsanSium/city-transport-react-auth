@@ -9,6 +9,7 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import { Container } from '@material-ui/core';
 import { UserContext } from '../../App';
+import logo from '../../images/logo.png';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -19,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     flexGrow: 1,
+    margin:'5px'
   },
 }));
 
@@ -30,15 +32,13 @@ const Header = () => {
     return (
 
         <div className={classes.root}>
-            <AppBar position="static">
+            <AppBar position="static" style={{padding:'10px', backgroundColor:'#3f51b56e'}}>
                 <Container maxWidth="xl">
                 <Toolbar>
                 <Link style={{color:'white',textDecoration:'none'}} to='/home'>    
-                <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-                    <MenuIcon />
-                </IconButton>
+                  <img style={{width:'110px', padding:'5%', display:'flex'}} src={logo} alt=""/>
                 </Link>
-                <Typography variant="h6" className={classes.title}>
+                <Typography variant="h5" className={classes.title}>
                     City Transport
                 </Typography>
                
