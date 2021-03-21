@@ -19,7 +19,12 @@
     7. Private Route Implementation
 
     8. Responsive Design
-       
+
+    9. Added Here Maps
+
+    10. Added Maps Drag and Zoom Functionality
+
+
 
 ### Live Site: https://city-transport-1e21a.web.app/
 
