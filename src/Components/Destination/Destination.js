@@ -10,6 +10,7 @@ import car from '../../images/Frame-2.png';
 import bus from '../../images/Frame-1.png';
 import train from '../../images/Group.png';
 import person from '../../images/peopleicon.png';
+import {DisplayMapClass} from '../../Map/Map';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -149,7 +150,7 @@ const Destination = () => {
 
                     </Grid>
                     <Grid item xs={12} sm={8}>
-                        <Paper className={classes.paper}>Map Goes Here</Paper>
+                        <Paper className={classes.paper}> <DisplayMapClass /> </Paper>
                     </Grid>
                 </Grid>
             </div>
