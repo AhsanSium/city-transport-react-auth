@@ -1,26 +1,26 @@
 [{
-  "car": "300D",
-  "bike": "Cabriolet",
-  "bus": "Ram Van 3500",
-  "train": "Excel"
+  "car": "$397.84",
+  "bike": "$73.53",
+  "bus": "$45.11",
+  "train": "$66.01"
 }, {
-  "car": "M3",
-  "bike": "Land Cruiser",
-  "bus": "Grand Cherokee",
-  "train": "Torino"
+  "car": "$413.86",
+  "bike": "$80.74",
+  "bus": "$20.98",
+  "train": "$50.80"
 }, {
-  "car": "GTO",
-  "bike": "Sentra",
-  "bus": "Sable",
-  "train": "Sequoia"
+  "car": "$192.94",
+  "bike": "$57.31",
+  "bus": "$23.05",
+  "train": "$91.88"
 }, {
-  "car": "Raider",
-  "bike": "TundraMax",
-  "bus": "90",
-  "train": "Daewoo Magnus"
+  "car": "$86.93",
+  "bike": "$62.22",
+  "bus": "$15.77",
+  "train": "$82.53"
 }, {
-  "car": "Challenger",
-  "bike": "Prizm",
-  "bus": "RX",
-  "train": "Grand Prix"
+  "car": "$279.61",
+  "bike": "$30.63",
+  "bus": "$10.29",
+  "train": "$37.58"
 }]

@@ -47,10 +47,15 @@ const Login = () => {
             .then((result) => {
                 
                 const { displayName, email } = result.user;
-                const signedInUser = { name: displayName, email };
-                setUser(signedInUser);
+                // const signedInUser = { name: displayName, email };
+                const newUserInfo = { ...user };
+                newUserInfo.name = displayName;
+                newUserInfo.email = email;
+                newUserInfo.success = true;
+                newUserInfo.isSignedIn = true;
+                setUser(newUserInfo);
                 history.replace(from);
-                console.log(signedInUser);
+                console.log(newUserInfo, user);
             }).catch((error) => {
                 // // Handle Errors here.
                 // var errorCode = error.code;
@@ -59,6 +64,11 @@ const Login = () => {
                 // var email = error.email;
                 // // The firebase.auth.AuthCredential type that was used.
                 // var credential = error.credential;
+
+                const newUserInfo = { ...user };
+                    newUserInfo.error = error.message;
+                    newUserInfo.success = false;
+                    setUser(newUserInfo);
 
             });
     }
@@ -101,13 +111,13 @@ const Login = () => {
                     setUser(newUserInfo);
                     updateUserName(user.name);   
                     console.log('User Created',res);
+                    history.replace(from);
                 })
                 .catch((error) => {
                     const newUserInfo = { ...user };
                     newUserInfo.error = error.message;
                     newUserInfo.success = false;
                     setUser(newUserInfo);
-                    history.replace(from);
                 });
         }
 
@@ -118,6 +128,7 @@ const Login = () => {
                     newUserInfo.error = '';
                     newUserInfo.success = true;
                     newUserInfo.isSignedIn= true;
+                    newUserInfo.name = res.user.displayName;
                     setUser(newUserInfo);
                     console.log('User Info', res.user);
                     history.replace(from);
@@ -162,11 +173,11 @@ const Login = () => {
                 <FormGroup onSubmit={handleSubmit} className={classes.root} autoComplete="off">
                     
                     {newUser &&
-                        <TextField onChange={handleChange} required id="filled-secondary" label="Name" variant="filled" color="secondary" name="name" />
+                        <TextField onBlur={handleChange} required id="filled-secondary" label="Name" variant="filled" color="secondary" name="name" />
 
                     }
-                    <TextField onChange={handleChange} required id="filled-secondary" label="E-mail" variant="filled" color="secondary" name="email" />
-                    <TextField onChange={handleChange} required id="filled-secondary" label="Password" variant="filled" color="secondary" name="password" type="password"  />
+                    <TextField onBlur={handleChange} required id="filled-secondary" label="E-mail" variant="filled" color="secondary" name="email" />
+                    <TextField onBlur={handleChange} required id="filled-secondary" label="Password" variant="filled" color="secondary" name="password" type="password"  />
                     
                     <input onClick={handleSubmit} value={newUser?'Sign Up': 'Sign in'} type="submit" />
                     <input  type="checkbox" onChange={() => setNewUser(!newUser)} name="newUser" id="" />
