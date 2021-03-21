@@ -92,12 +92,15 @@ const Login = () => {
         }
         if (isFormValid) {
             const newUserInfo = { ...user };
+            newUserInfo.error = '';
             newUserInfo[event.target.name] = event.target.value;
             setUser(newUserInfo);
             console.log(user);
         }
         else {
-            console.log('Invalid Form')
+            const newUserInfo = { ...user };
+            newUserInfo.error = 'Invalid Input Try Again';
+            setUser(newUserInfo);
         }
     }
 
@@ -171,8 +174,8 @@ const Login = () => {
                     </div>
                 }
                 <h2>{newUser ? 'Sign Up' : 'Login'} </h2>
-                <FormGroup  onSubmit={handleSubmit} className={classes.root} autoComplete="off">
-                    
+                <FormGroup   className={classes.root} autoComplete="off">
+                <form onSubmit={handleSubmit} action="">  
                     {newUser &&
                         <TextField onBlur={handleChange} required id="filled-secondary" label="Name" variant="filled" color="secondary" name="name" />
 
@@ -181,7 +184,7 @@ const Login = () => {
                     
                     <TextField onBlur={handleChange} required id="filled-secondary" label="Password" variant="filled" color="secondary" name="password" type="password"  />
                     
-                    <Button onClick={handleSubmit} variant="contained" color="primary">
+                    <Button  type="submit" variant="contained" color="primary">
                         {newUser?'Sign Up': 'Sign in'}
                     </Button>
                     
@@ -191,7 +194,7 @@ const Login = () => {
                         <input   type="checkbox" onChange={() => setNewUser(!newUser)} name="newUser" id="" />
                         <label  htmlFor="newUser">New User Sign Up !</label>
                     </div>
-                    
+                </form>
                 </FormGroup>
                     
                     
