@@ -10,13 +10,16 @@
 
     3. E-mail Password Login and Sign Up
 
-    4. Google Sign Up
+    4. Email and Password Validation added
 
-    5. React Route
+    5. Google Sign Up
 
-    6. Private Route Implementation
+    6. React Route
 
-    7. Responsive Design   
+    7. Private Route Implementation
+
+    8. Responsive Design
+       
 
 ### Live Site: https://city-transport-1e21a.web.app/
 
